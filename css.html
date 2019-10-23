@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" type="text/css" href="default.css" />
+        <!-- external 외부에서 css파일을 불러와서 사용하기 -->
+        <style>
+        #embeded{
+            color : green;
+            font-size : 30px; 
+        }
+        /* 전체 선택자 - 모든 설정이 바뀜 */
+        *{
+            /* color: pink; */
+        }
+        /* 요소 선택자 - 우리가 선택한 모든 태그들이 바뀜*/
+        b{color: violet; }
+        div{ font-size: 10px}
+        /* css 주석 */
+        </style>
+    </head>
+    <!-- html 주석-->
+    <body>
+        <div id="external">external 방식</div>
+        <div id="embeded">embeded 방식</div>
+        <div id="inline" style="color:yellow;">inline 방식</div>
+        <!-- inline 방식은 그 태그만 css가 적용될 때 사용/ 안그러면 수정할 때 힘듬-->
+        내용
+        <b>볼드체</b>
+
+        <style> 
+            /* 클래스 선택자 */
+            .c_name{ color : green; }
+            /* 아이디 선택자 */
+            #i_name{ color : purple; }
+        </style>
+        <div class="c_name"> 클래스 선택자</div> <!-- class는 복수가능 -->
+        <div id="i_name">아이디 선택자</div> <!-- id 웬만하면 복수 X -->
+        <!-- 우리가 div태그로 이름을 지은 후 그 이름의 태그들을 설정 -->
+
+        <style>
+        /* 가상요소 선택자 */
+        #name_a:before{ content : "시작";}
+        #name_a:after{ content: "끝"}
+        #name_a:first-letter{ font-size: 300px; }
+        #name_a:first-line{ color : pink;}
+        </style>
+        <div id="name_a">  지기역오빠는 24살이다. 근데 23살이랑도 친구다. 20살이랑도 친구다. 그래서 나랑 친구다 오빠랑 나는 친구다.  </div>
+        
+        <style>
+            .li1:first-child{ color : red; }
+            .li1:last-child{ color : blue; }
+            .li1:nth-child(2){ color : green; }
+            /* 1st, 2nd 3rd, 4th ... nth */
+            /* :link 기본, :visited 방문 후, :hover 마우스 올림. :active 누름, :focus 집중 */
+            a:link{ color : black; text-decoration: none; }
+            a:visited{ color : red; }
+            a:hover{ color : blue; font-size :30px }
+            a:active{ color : yellow; }
+            a:focus{ color: green;}
+        </style>
+        <ul> <!-- parent 부모 -->
+            <li class="li1">리스트1</li> <!-- child 자식 -->
+            <li class="li1">리스트2</li>
+            <li class="li1">리스트3</li>
+            <li class="li1">리스트4</li>
+            <li class="li1">리스트5</li>
+        </ul>
+        <a href="#">링크 버튼</a>
+
+        <style>
+            /* 하위 선택자 */
+            div li{ color : red; }
+            /* 자식 선택자 */
+            div>ul>li{ text-decoration : underline; }
+            /*선택화 그룹화*/
+            div{color: red;}
+            #i_1,#i_2,#i_3{ color : purple; }
+
+        </style>
+        <div>
+            <ul>
+                <li>리스트1</li>
+                <li>리스트2</li>
+                <li>리스트3</li>
+            </ul>
+        </div>
+        <div id="i_1">첫번째</div>
+        <div id="i_2">두번째</div>
+        <div id="i_3">세번째</div>
+
+        <style type="text/css">
+            .cascade {color:green;}
+            #specifi {color:blue;}
+        </style>
+        <div class="cascade"> 단계적으로 적용되는 스타일 </div>
+        <div class="cascade" id="specifi"> 단계적으로 적용되는 스타일 </div>
+        <div class="cascade" id="specifi" style="color:red;"> 단계적으로 적용되는 스타일 </div>
+    
+        <style>
+            #color_test{
+                /* 색상을 표기하는 방법 */
+                color : blue;
+                color : #000; /* #RGB , 0~f(16진수) */
+                color : #000000; /* #RRGGBB ,0~f(16진수)*/
+                color : rgb(0,0,255); /* 0~255 */
+                color : rgb(0,0,100%); /* 0~100% */
+            }
+        </style>
+        <div id="color_test">color_test</div>    
+
+        <style>
+            #box_model{
+                border: solid 1px black; /* 경계선: 실선 1px두께 검은색; */
+                width : 200px; /* 가로 길이  */
+                height: 200px; /* 세로 길이 */
+                /* margin 바깥 여백 */
+                margin : 100px;
+                /* padding 안쪽 여백 */
+                padding : 100px;
+                position : fixed; /* 기본 static(정적인, 멈춰있는) */
+                /* static 정적인, relative 관계형, absolute 절대적인, fixed 고정형 */
+                left: 10px;
+                top : 10px;
+            }
+        </style>
+        <div id="box_model">박스모델</div>
+        <span id="inline_model"> 인라인모델 </span>
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <style>
+            #font_target{
+                font-family: "NanumBrush", "돋움", Dotum, "굴림", Gulim, sans-serif ;
+                font-size: 20px;
+                font-weight: bold;
+                /* light bold bolder, 100 200 300 400 */
+                font-style: italic;
+                /* normal, italic */
+                font-variant: small-caps; /* 소문자크기인 작은 대문자로 표현 */
+
+            }
+        </style>
+        폰트 교체하기  font test
+        <div id="font_target">
+            폰트 교체하기 font test 
+            AbcdEhHijk
+        </div>
+
+        <style>
+            #text_target{
+                text-align: center;
+                /* left right center */
+                width: 150px;
+
+                vertical-align: top; /* 상하정렬 */
+
+                text-decoration: underline;
+                /* underline, line-through, overline */
+            }
+        </style>
+        <div id="text_target"> 글 정렬 방식 </div>
+
+        <style>
+            #line_target{
+                letter-spacing: 20px; /* 글자 간격 */
+                line-height: 20px; /* 줄 간격 */
+                text-indent: 20px; /* 들여쓰기 */
+                text-transform: uppercase; /* 대소문자 변경 */
+                /* UPPERCASE lowercase capitalize */
+                white-space: pre; /* 띄어쓰기, 공백 모두 포함 */
+            }
+        </style>
+        <div id="line_target">
+            내용내용내용내용내용 내용내용내용내용내용
+            내용내용내용내용내용내용내용내용내용내용
+            내용내용내용내용내용내용내용내용내용내용
+            내용내용내용내용내용 내용내용내용내용내용
+            AbcdEhHijk
+        </div>
+
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Mansalva&display=swap');
+            #google_font{
+                font-family: 'Mansalva', cursive;
+            }
+            /* font.google.com 에서 원하는 폰트 선택 -> 아래 검정바 클릭 -> embed패널에 @imort주소를 style태그 안에 복사 / 아래 specify in css 를 괄호안에 복사 */
+        </style>
+        google font 구글폰트
+        <div id="google_font"> google font 구글폰트</div>
+    </body>
+    
+</html>
