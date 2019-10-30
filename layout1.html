@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>layout1</title>
+        <meta charset="utf-8" />
+        <style>
+            header,div,nav,footer,ul,li,h1,h2,h3{
+               /* border: solid 1px black;*/ /* 경계선 긋기 */
+               /* margin: 10px; */ /* 서로간에 여유공간 만들기 */
+            }
+            /* 특정 li태그가 된 것만 부르기  헤더안에 ul*/
+            header>ul>li{
+                float:left; /* 둥둥 떠다니게 : 왼쪽으로 < float의 특성상 화면의 크기가 줄어드면 밑으로 떨어짐*/
+                list-style: none; /* 목록-모습(동그라미): 없음 */
+                /* margin-left: 10px; 바깥여백-왼쪽: 10px 
+                   margin-right: 10px; 바깥여백-오른쪽: 10px 
+                margin은 border(경계선)을 포함하지 않고 콘텐츠 바깥쪽에 공간이 생기지만, padding은 border(경계선)까지 미뤄서 간격을줌*/ 
+                padding-left: 10px; /* 바깥여백-왼쪽: 10px */
+                padding-right: 10px; /* 바깥여백-오른쪽: 10px */               
+                /* border: solid 1px gray; - 경계선: 실선 1px 두께 회색 */
+                border-right : solid 1px gray; /* 경계선-오른쪽 : 실선 1px 두께 회색 */
+            }
+            header>ul>li:nth-child(5){
+                border:none; /* 경계선: 없음 - 가장 우측의 contact us 우측의 있는 선을 지정을 해서 없앰 */
+            }
+            .clear{
+                clear: both; /* 지우다 : 양쪽 < 가장 중요한 부분 , li태그 양옆에 아무것도 없었으면 좋겠어!*/ 
+                height : 0px; /* 높이 : 0px < 돋보기와 li태그 사이의 높이 */
+                overflow : hidden; /* 넘쳤을 때 : 숨김 < div class="clear"라고 명령했던 것의 모습을 숨기기 위함 */
+            }
+            header>ul{
+                margin: 11px; /* li태그들 가운데로 맞추기 */
+            }
+            header>h1{
+                margin: 0px; /* 로고의 마진을 없앰 */
+            }
+            #zoom/*아이디 같은 경우는 #을 사용,*/{
+                margin: 10px;
+            }
+            .float_left /*class는 .을 사용*/ {
+                float: left; 
+            }
+            .float_right{
+                float: right;
+            }
+            nav li/* nav>ul>li = nav li 띄어쓰기는 nav가 상위고 li가 하위개념이에요 라는 의미*/{
+                float: left;
+                list-style: none;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            nav>h2{
+                margin: 2px;
+            }
+            nav>ul{
+                margin: 8px;
+            }
+            nav{
+                background-color: #eee;
+            }
+            #content>div:nth-child(1){
+                background-color: #98f;            
+            }
+            #content>div:nth-child(2){
+                background-color: #5d9;            
+            }
+            #content>div:nth-child(3){
+                background-color: #f76;            
+            }
+            #content>div:nth-child(4){
+                background-color: #ec5;            
+            }
+            .content_part{
+                float: left;
+                width: 480px;
+                margin: 15px;
+            }
+            #content h3{
+                color: white;
+            }
+            #content dt{
+                font-weight: bold; /*글씨-두께: 두껍게; */
+            }
+            #content dd /* content dd = .content_part dd */{
+                margin: 0px;
+            }
+            #content section{
+                width: 1020px;
+                margin-left: 200px; /* 고정값 */
+                margin-left: auto; /* 가변값 */
+                margin-right: auto; /* 가변값 */
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <header>
+                <h1 class="float_left">
+                    <img src="images/layout1_head_logo.jpg" />
+                </h1>
+                <ul class="float_left">
+                    <li>ABOUT</li>
+                    <li>SERVIECES</li>
+                    <li>WORKS</li>
+                    <li>BLOG</li>
+                    <li>CONTACT US</li>
+                    <div class="clear"></div><!-- float left 해제 < 집나간 li를 위해 -->
+                </ul>
+                <div id="zoom" class="float_right">
+                    <img src="images/layout1_head_zoom.jpg" />
+                </div>
+                <div class="clear"></div><!-- float left 해제 < 집나간 h1을 위해-->
+                <!-- div class="clear"은 이제 그만 줄섭시다. 라는 뜻으로 li 마지막만 사용해라 -->
+            </header>
+            <nav>
+                <h2 class="float_left">See Our Works</h2>
+                <ul class="float_right">
+                    <li>Web Design</li>
+                    <li>Icons</li>
+                    <li>Illustration</li>
+                    <li>Misc</li>
+                    <div class="clear"></div><!-- float left 해제 < 집나간 li를 위해 --> 
+                </ul>
+                <div class="clear"></div><!-- float left 해제 < 집나간 li를 위해 --> 
+            </nav>
+            <div id="content">
+                <div>
+                    <section>
+                        <!-- 파란박스 부분 -->
+                        <h3> Web Design</h3>
+                        <div class="content_part">
+                            <!-- 왼편 부분 -->
+                            <img src="images/layout1_img1.jpg" />
+                            <dl>
+                                <dt>Lorem ipsum dolor sit amet</dt>
+                                <dd>
+                                    Consectetur adipiscing elit. 
+                                    Suspendisse sed leo tellus. 
+                                    Praesent nec vehicula ligula, 
+                                    non laoreet ligula. Maecenas 
+                                    at massa eget orci porttitor 
+                                    semper.
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="content_part">
+                            <!-- 오른편 부분 -->
+                            <img src="images/layout1_img2.jpg" />
+                            <dl>
+                                <dt>Lorem ipsum dolor sit amet</dt>
+                                <dd>
+                                    Consectetur adipiscing elit. 
+                                    Suspendisse sed leo tellus. 
+                                    Praesent nec vehicula ligula, 
+                                    non laoreet ligula. Maecenas 
+                                    at massa eget orci porttitor 
+                                    semper.
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="clear"></div><!-- float left 해제 < 집나간 li를 위해 --> 
+                    </section>
+                </div>
+                <div>
+                    <section>
+                        <!-- 초록박스 부분 -->
+                        <h3> Web Design</h3>
+                        <div class="content_part">
+                            <!-- 왼편 부분 -->
+                            <img src="images/layout1_img3.jpg" />
+                            <dl>
+                                <dt>Lorem ipsum dolor sit amet</dt>
+                                <dd>
+                                    Consectetur adipiscing elit. 
+                                    Suspendisse sed leo tellus. 
+                                    Praesent nec vehicula ligula, 
+                                    non laoreet ligula. Maecenas 
+                                    at massa eget orci porttitor 
+                                    semper.
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="content_part">
+                            <!-- 오른편 부분 -->
+                            <img src="images/layout1_img4.jpg" />
+                            <dl>
+                                <dt>Lorem ipsum dolor sit amet</dt>
+                                <dd>
+                                    Consectetur adipiscing elit. 
+                                    Suspendisse sed leo tellus. 
+                                    Praesent nec vehicula ligula, 
+                                    non laoreet ligula. Maecenas 
+                                    at massa eget orci porttitor 
+                                    semper.
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="clear"></div><!-- float left 해제 < 집나간 li를 위해 --> 
+                    </section>
+                </div>
+                <div>
+                    <section>
+                        <!-- 분홍박스 부분 -->
+                        <h3> Web Design</h3>
+                        <div class="content_part">
+                            <!-- 왼편 부분 -->
+                            <img src="images/layout1_img5.jpg" />
+                            <dl>
+                                <dt>Lorem ipsum dolor sit amet</dt>
+                                <dd>
+                                    Consectetur adipiscing elit. 
+                                    Suspendisse sed leo tellus. 
+                                    Praesent nec vehicula ligula, 
+                                    non laoreet ligula. Maecenas 
+                                    at massa eget orci porttitor 
+                                    semper.
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="content_part">
+                            <!-- 오른편 부분 -->
+                            <img src="images/layout1_img6.jpg" />
+                            <dl>
+                                <dt>Lorem ipsum dolor sit amet</dt>
+                                <dd>
+                                    Consectetur adipiscing elit. 
+                                    Suspendisse sed leo tellus. 
+                                    Praesent nec vehicula ligula, 
+                                    non laoreet ligula. Maecenas 
+                                    at massa eget orci porttitor 
+                                    semper.
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="clear"></div><!-- float left 해제 < 집나간 li를 위해 --> 
+                    </section>
+                </div>
+                <div>
+                    <section>
+                        <!-- 노란박스 부분 -->
+                        <h3> Web Design</h3>
+                        <div class="content_part">
+                            <!-- 왼편 부분 -->
+                            <img src="images/layout1_img7.jpg" />
+                            <dl>
+                                <dt>Lorem ipsum dolor sit amet</dt>
+                                <dd>
+                                    Consectetur adipiscing elit. 
+                                    Suspendisse sed leo tellus. 
+                                    Praesent nec vehicula ligula, 
+                                    non laoreet ligula. Maecenas 
+                                    at massa eget orci porttitor 
+                                    semper.
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="content_part">
+                            <!-- 오른편 부분 -->
+                            <img src="images/layout1_img8.jpg" />
+                            <dl>
+                                <dt>Lorem ipsum dolor sit amet</dt>
+                                <dd>
+                                    Consectetur adipiscing elit. 
+                                    Suspendisse sed leo tellus. 
+                                    Praesent nec vehicula ligula, 
+                                    non laoreet ligula. Maecenas 
+                                    at massa eget orci porttitor 
+                                    semper.
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="clear"></div><!-- float left 해제 < 집나간 li를 위해 --> 
+                    </section>
+                </div>
+            </div>
+            <footer>footer</footer>
+        </div>
+    </body>
+</html>
