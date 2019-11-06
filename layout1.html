@@ -8,6 +8,9 @@
                /* border: solid 1px black;*/ /* 경계선 긋기 */
                /* margin: 10px; */ /* 서로간에 여유공간 만들기 */
             }
+            header{
+                padding: 10px 50px /*상하px 좌우px*/
+            }
             /* 특정 li태그가 된 것만 부르기  헤더안에 ul*/
             header>ul>li{
                 float:left; /* 둥둥 떠다니게 : 왼쪽으로 < float의 특성상 화면의 크기가 줄어드면 밑으로 떨어짐*/
@@ -34,10 +37,10 @@
             header>h1{
                 margin: 0px; /* 로고의 마진을 없앰 */
             }
-            #zoom/*아이디 같은 경우는 #을 사용,*/{
+            #zoom/* id는 #을 사용 */{
                 margin: 10px;
             }
-            .float_left /*class는 .을 사용*/ {
+            .float_left /* class는 .을 사용 */ {
                 float: left; 
             }
             .float_right{
@@ -57,6 +60,7 @@
             }
             nav{
                 background-color: #eee;
+                padding:10px 50px; /*상하px 좌우px*/
             }
             #content>div:nth-child(1){
                 background-color: #98f;            
@@ -89,6 +93,50 @@
                 margin-left: 200px; /* 고정값 */
                 margin-left: auto; /* 가변값 */
                 margin-right: auto; /* 가변값 */
+
+                padding: 50px 0px; /*상하px 좌우px*/
+            }
+            footer{
+                background-color: #234;
+                color: #ccb;
+                
+                padding: 10px 50px; /*상하px 좌우px*/
+            }
+            footer>div>ul>li{
+                float:left;
+                list-style:none;
+                padding:0px 10px; /*상화 좌우*/
+                border-right : solid 2px gray
+            }
+            footer>div>ul>li:nth-child(6){
+                border:none;
+            }
+            footer>div>ul{
+                padding:0px;
+            }
+            footer>ul>li{
+                float: left;
+                list-style:none;
+                padding :0px 10px; /*상하px 좌우px*/
+            }
+            footer>ul{
+                padding: 0px;
+            }
+            #footer_left{
+                float: left;
+            }
+            #footer_right{
+                float: right;
+            }
+            #wrap{
+               /* width: 1200px; */ /* 고정값 */
+               min-width: 1100px; /* 최소넓이 */
+               max-width: 1920px; /* 최대넓이 */
+               margin-left: auto; /* 가변값 */
+               margin-right: auto; /* 가변값 */
+            }
+            body{
+                margin: 0px;
             }
         </style>
     </head>
@@ -273,7 +321,36 @@
                     </section>
                 </div>
             </div>
-            <footer>footer</footer>
+            <footer>
+                <div id="footer_left">
+                    <ul>
+                        <li>Home</li>
+                        <li>About</li>
+                        <li>Services</li>
+                        <li>Work</li>
+                        <li>Blog</li>
+                        <li>Contact us</li>
+                        <div class="clear"></div>
+                    </ul>
+                    <div>ⓒ 2013 BlueBox. All Right Reserved.</div>
+                    <!-- 의미 없이 나눌 땐 div 사용-->
+                    <div>
+                        the loges in the design are the property of 
+                        their respective owners/copyright holders.
+                    </div>
+                 </div>
+                 <ul id="footer_right"><!-- 오른편 상자 역할 -->
+                     <li><img src="images/layout1_footer_icon1.png"/></li>
+                     <li><img src="images/layout1_footer_icon2.png"/></li>
+                     <li><img src="images/layout1_footer_icon3.png"/></li>
+                     <li><img src="images/layout1_footer_icon4.png"/></li>
+                     <li><img src="images/layout1_footer_icon5.png"/></li>
+                     <li><img src="images/layout1_footer_icon6.png"/></li>
+                     <div class="clear"></div>
+                 </ul>
+                 <div class="clear"></div>
+                 <br>
+            </footer>
         </div>
     </body>
 </html>

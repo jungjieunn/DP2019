@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>layout2</title>
+        <meta charsett="utf-8" />
+        <style>
+        /* css 작성하는곳 */
+        header{
+            background-color : black;
+            color:white;
+        }
+        header>h1>span:nth-child(1){
+            color: white;
+        }
+        header>h1>span:nth-child(2){
+            color: #e9dd8a;
+        }
+        header>nav li{
+            float: left;
+            list-style: none;
+            padding: 0px 10px /* 상하px 좌우px */
+        }
+        header ul{
+            margin:15px 0px; /* 상하px 좌우px */
+        }
+        .clear{
+                clear: both; /* 지우다 : 양쪽 */ 
+                height : 0px; /* 높이 : 0px */
+                overflow : hidden; /* 넘쳤을 때 : 숨김 */
+            }
+        .float_left{
+            float: left;
+        }
+        .float_right{
+            float: right;
+        }
+        header>h1{
+            margin:5px;
+        }
+        #main_visual{
+            background-image: url("images/layout2_visual.jpg");
+            height: 400px;
+            background-size: auto 100%;
+            background-size: cover; 
+            background-repeat: no-repeat;
+            /* repeat, no-repeat, repeat-x, repeat-y */
+            background-color: black;
+            background-position: 50% 50% /* 가로% 세로% */ /* 픽셀로 입력해서 사용가능하지만 퍼센트면 자동으로 가운데위치를 유지함 */
+        }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <header>
+                <h1 class="float_left">
+                    <!-- 의미는 없지만 용도 때문에 사용할 땐 div와 span을 사용함 -->
+                    <!-- div는 줄내림, span 띄어쓰기-->
+                    <span>MY</span><span>POLIO</span>
+                </h1>
+                <nav class="float_right">
+                    <ul>
+                        <li>HOME</li>
+                        <li>ABOUT ME</li>
+                        <li>SERVICE</li>
+                        <li>MY WORK</li>
+                        <li>CONTACT ME</li>
+                        <div class="clear"></div><!-- float left 해제  -->
+                    </ul>
+                 </nav>  
+                 <div class="clear"></div>
+            </header>
+            <div id="main_visual"></div>
+            <section>content1</section>
+            <section>content2</section>
+
+        </div>
+
+    </body>
+</html>
