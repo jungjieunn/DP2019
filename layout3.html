@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>layout3</title>
+        <meta charset="UTF-8">
+        <style>
+            /* CSS 작성하는 곳 */
+            body{
+                background-image: url("images/Layout3_back.jpg");
+            }
+            .short_line{
+                border-bottom : solid 1px gray; /* border-top 과 bottom 중 한방향 설명 top, bottom 둘중 상관 x*/
+                width: 20px;
+            }
+            header ul{
+                padding: 0px;
+            }
+            header li{
+                float: left;
+                list-style: none;
+                padding: 0px 20px 0px 0px; /* 상 우 하 좌*/
+            }
+            .clear{
+            clear: both; /* 지우다 : 양쪽 */ 
+            height : 0px; /* 높이 : 0px */
+            overflow : hidden; /* 넘쳤을 때 : 숨김 */
+            }
+            .category{
+                background-color: black;
+                color: white;
+                /* width : 150px; -> 고정값은 극적인 한 경우에만 적용 */
+                display: inline-block; 
+                padding : 5px 8px; /* margin은 외부여백 padding은 내부여백*/
+                position: static; /* 위치 : 정적인 */
+                position: absolute; /* 위치 : 절대적인 _남에게 밀리지 않고, 자신의 위치를 지킴 */
+                
+                top: 10px;
+                left: 10px;
+            }
+            .visual{
+                position: relative; /* 위치 : 관계형 - 자식(.category)이 absolute일 경우 relative인 부모(.visual)가 위치 설정의 기준이 됨 */
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <header>
+                <h1>Gridly</h1>
+                <div class="short_line"></div> <!--의미가 없는 태그 = div 사용-->
+                <nav>
+                    <ul>
+                        <li>home</li>
+                        <li>digital designs</li>
+                        <li>web designs</li>
+                        <li>branding/identity</li>
+                        <li>about me </li>
+                        <li>contact</li>
+                        <div class="clear"></div><!-- float left 해제  -->
+                    </ul>
+               </nav> 
+               <div class="short_line"></div>  
+            </header>
+            <div id="content">
+                <ul>
+                    <li class="card">
+                        <div class="visual">
+                            <img src="images/layout3_img1.jpg" />
+                            <div class="category">Photoshop design</div>
+                        </div>
+                        <div class="info">
+                            <dl>
+                                <dt>Dulux Colour Awards</dt>
+                                <dd>
+                                    <div>12th October 2011</div>
+                                    <div class="long_line"></div> 
+                                    <p>
+                                        A direct mail kit that announces the Dulux Colour Awards Competition has commenced. 
+                                        A collection of posters showing the famous colours of history, 
+                                        advertises you add your own colours to history.
+                                    </p>
+                                    <div class="long_line"></div>
+                                    <div>Reda On →</div>
+                                </dd>
+                            </dl>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+           <footer>footer</footer>
+        </div>
+        
+    </body>
+</html>

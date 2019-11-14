@@ -5,15 +5,19 @@
         <meta charsett="utf-8" />
         <style>
         /* css 작성하는곳 */
+        body{
+            margin : 0px; 
+        }
         header{
             background-color : black;
             color:white;
+            padding: 10px 50px; /*상하px 좌우px*/
         }
         header>h1>span:nth-child(1){
             color: white;
         }
         header>h1>span:nth-child(2){
-            color: #e9dd8a;
+            color: #e7d318;
         }
         header>nav li{
             float: left;
@@ -24,10 +28,10 @@
             margin:15px 0px; /* 상하px 좌우px */
         }
         .clear{
-                clear: both; /* 지우다 : 양쪽 */ 
-                height : 0px; /* 높이 : 0px */
-                overflow : hidden; /* 넘쳤을 때 : 숨김 */
-            }
+            clear: both; /* 지우다 : 양쪽 */ 
+            height : 0px; /* 높이 : 0px */
+            overflow : hidden; /* 넘쳤을 때 : 숨김 */
+        }
         .float_left{
             float: left;
         }
@@ -39,13 +43,89 @@
         }
         #main_visual{
             background-image: url("images/layout2_visual.jpg");
-            height: 400px;
+            /* height: 400px; 고정높이값이 지정되면 안에 내용물을 다 담지 못한다. 사진의 높이를 지정하지 말고 안에내용물의 패딩값을 높여라*/
             background-size: auto 100%;
             background-size: cover; 
             background-repeat: no-repeat;
             /* repeat, no-repeat, repeat-x, repeat-y */
             background-color: black;
-            background-position: 50% 50% /* 가로% 세로% */ /* 픽셀로 입력해서 사용가능하지만 퍼센트면 자동으로 가운데위치를 유지함 */
+            background-position: 50% 50%; /* 가로% 세로% */ /* 픽셀로 입력해서 사용가능하지만 퍼센트면 자동으로 가운데위치를 유지함 */
+
+            color: white; /* 상속 _ 메인비쥬얼 안에 있는 애들은 이제 계속 하얀색으로 나옴 */
+            text-align: center; /*넓이를 지정했을 땐 텍스트어라인이 적용이 안될 수 있음 그럴땐 left-margin rifgt-margin 값을 auto로 준다.*/
+
+            padding:100px 0px; 
+        }
+        #main_visual h2{
+            letter-spacing : 8px;
+            font-size: 35px;
+            margin : 8px 0px /*상하px 좌우px*/
+        }
+        #title_top{
+            font-size: 20px;
+        }
+        #title_bottom{
+            font-size: 15px;
+        }
+        #main_visual img{
+            margin-top: 120px;
+        }
+
+        /* content1 */
+        section{
+            text-align: center;
+        }
+        section h3{
+            color: #02918c;
+            font-size: 25px;
+            font-weight: normal;
+            margin : 50px 0px;
+        }
+        section p{
+            margin: 50px 20%;
+        }
+        section #about_list{
+            padding: 0px; /* width값으로 공간을 나눠도 한쪽으로 치우친것 같을 때 패딩값이 ul에 적용되어 있었다. 그래서 0px로 준 것 */
+            margin: 0px 50px;
+        }
+        section dd{
+            margin: 0px; /* 한쪽으로 쏠리게 만드는 원인을 해결 */
+        }
+        section>#about_list>li{
+            float : left;
+            width : 200px; /* 고정값 */
+            width : calc(25% - (1px / 4 * 3) - 30px - 30px); /* 네명이서 100%라는 공간을 나눠가짐 */
+            /* calc기호는 띄어쓰기 중요!!!!*/
+
+            list-style: none;
+            border-right : solid 1px gray; /* 맨오른쪽에 있던애가 아래로 내려갈 수도 있음 */
+            padding: 30px;
+        }
+        section>#about_list>li:nth-child(4){
+            border: none;
+        }
+        /* content2 */
+        #work_list{
+            padding: 0px;
+            margin: 0px;
+        }
+        #work_list>li{
+            float: left;
+            list-style: none;
+            width: 25%;
+        }
+        #work_list img{
+            width: 100%; /* 이미지가 있을 수 있는 공간에서 100% */
+           /* display : inline; /* 원래 이미지의 출력방식 - 그래서 사진 위아래 간격이 띄워져 있음 (글자와 글자의 간격이 상하로 벌어져있는 것 처럼) */
+            display : block; /* 블록형으로 변경 - 띄워쓰기가 없어짐 */
+            /*display는 나중에 한말이 결과로 나옴, inline은 그냥 무시당함*/
+        }
+        #wrap{
+            /* 웹사이트가 모바일화면일 때, 엄청 큰 모니터 화면일 때 모양이 무너지는 상황을 해결하고자 최소/최대 넓이를 지정함 */
+            min-width: 1000px; /* 최소넓이 */
+            max-width: 1920px; /* 최대넓이 */
+            margin-left: auto; /* 가변값 */
+            margin-right: auto; /* 가변값 */
         }
         </style>
     </head>
@@ -69,10 +149,87 @@
                  </nav>  
                  <div class="clear"></div>
             </header>
-            <div id="main_visual"></div>
-            <section>content1</section>
-            <section>content2</section>
+            <div id="main_visual">
+                <div id="title_top">Lorem ipsum dolor sit iusmod tempor</div>
+                <h2>INCIDIDUNT BORE</h2>
+                <div id="title_bottom">Orem ipsum dolor sit amet, consectetur</div>
+                <img src="images/layout2_button.jpg" />
+            </div>
 
+            <!-- content1 -->
+            <section>
+                <h3>ABOUT ME</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                    commodo consequat duis aute irure dolor.</p>
+                    <ul id="about_list">
+                        <li>
+                            <img src="images/layout2_icon1.jpg" />
+                            <dl>
+                                <dt>Title goes here</dt>
+                                <dd>
+                                    onsectetur adipisicing elit, 
+                                    sedo eiusmod tempor incidi et 
+                                    dolorerserss eerhfre mag.
+                                </dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <img src="images/layout2_icon2.jpg" />
+                            <dl>
+                                <dt>Title goes here</dt>
+                                <dd>
+                                    onsectetur adipisicing elit, 
+                                    sedo eiusmod tempor incidi et 
+                                    dolorerserss eerhfre mag.
+                                </dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <img src="images/layout2_icon3.jpg" />
+                            <dl>
+                                <dt>Title goes here</dt>
+                                <dd>
+                                    onsectetur adipisicing elit, 
+                                    sedo eiusmod tempor incidi et 
+                                    dolorerserss eerhfre mag.
+                                </dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <img src="images/layout2_icon4.jpg" />
+                            <dl>
+                                <dt>Title goes here</dt>
+                                <dd>
+                                    onsectetur adipisicing elit, 
+                                    sedo eiusmod tempor incidi et 
+                                    dolorerserss eerhfre mag.
+                                </dd>
+                            </dl>
+                        </li>
+                        <div class="clear"></div><!-- float left 해제 < 집나간 li를 위해 -->
+                    </ul>
+            </section>
+
+            <!-- content2 -->
+            <section>
+                <h3>MY WORK</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua.
+                </p> <!-- css에서 content1에 적용된 선택자가 동일하여 같은 모양이 적용됨(좋은사례) -->
+                <ul id="work_list">
+                    <li><img src="images/layout2_pic1.jpg" /></li>
+                    <li><img src="images/layout2_pic2.jpg" /></li>
+                    <li><img src="images/layout2_pic3.jpg" /></li>
+                    <li><img src="images/layout2_pic4.jpg" /></li>
+                    <li><img src="images/layout2_pic5.jpg" /></li>
+                    <li><img src="images/layout2_pic6.jpg" /></li>
+                    <li><img src="images/layout2_pic7.jpg" /></li>
+                    <li><img src="images/layout2_pic8.jpg" /></li>
+                    <div class="clear"></div><!-- float left 해제  -->
+                </ul>
+            </section>
         </div>
 
     </body>
