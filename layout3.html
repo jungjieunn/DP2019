@@ -112,11 +112,21 @@
             .info dt{
                 font-weight: bold;
             }
+            section>#about_list>li{
+                float : left;
+                width : 200px; /* 고정값 */
+                width : calc(25% - (1px / 4 * 3) - 30px - 30px); /* 네명이서 100%라는 공간을 나눠가짐 */
+                /* calc기호는 띄어쓰기 중요!!!!*/
+
+                list-style: none;
+                border-right : solid 1px gray; /* 맨오른쪽에 있던애가 아래로 내려갈 수도 있음 */
+                padding: 30px;
+             }
             .footer{
-            background-color: black;
-            color: #ccb;
+                background-color: black;
+                color: #ccb;
             
-            padding: 10px 50px; /*상하px 좌우px*/
+                 padding: 10px 50px; /*상하px 좌우px*/
             }
             footer>div>ul>li{
                 float:left;
