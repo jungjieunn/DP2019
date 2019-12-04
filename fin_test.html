@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>종이의 집</title>
+        <meta charset="utf-8" />
+        <style>
+            body{
+                background-color : black;
+                margin: 0px;
+            }
+            .clear{
+            clear: both; /* 지우다 : 양쪽 */ 
+            height : 0px; /* 높이 : 0px */
+            overflow : hidden; /* 넘쳤을 때 : 숨김 */
+            }
+            .header{
+                color:white;
+                padding: 10px 10px; 
+                position : fixed;
+            }
+
+            .header>h1 img{
+                margin: 0px;
+                padding: 0px; 
+                height: 80px;
+            }
+
+            .header>nav li{
+                float: left;
+                list-style: none;
+                padding: 0px 10px /* 상하px 좌우px */
+            }
+
+            .header ul img{
+                margin:10px 10px; /* 상하px 좌우px */
+                height: 30px;
+            }
+
+            .nv_left{
+                float: left;
+            }
+            .nv_right{
+                float: right;
+            }
+            header>h1{
+                margin:5px;
+            }
+            #visual{
+            background-image: url("images/main.png");
+            /* height: 400px; 고정높이값이 지정되면 안에 내용물을 다 담지 못한다. 사진의 높이를 지정하지 말고 안에내용물의 패딩값을 높여라*/
+            background-size: 100%;
+            background-size: cover; 
+            background-repeat: no-repeat;
+            background-color: black;
+            background-position: 50% 50%; /* 가로% 세로% */ /* 픽셀로 입력해서 사용가능하지만 퍼센트면 자동으로 가운데위치를 유지함 */
+
+            color: white;
+            text-align: left; /*넓이를 지정했을 땐 텍스트어라인이 적용이 안될 수 있음 그럴땐 left-margin rifgt-margin 값을 auto로 준다.*/
+            
+
+            padding:400px 80px; 
+            }
+            
+            #up img{
+                width: 100px;
+                margin: 10px 0px;
+            }
+            #visual h2{
+                font-size : 50px;
+                margin: 0px;
+            }
+            #visual h3{
+                margin: 5px 0px;
+            }
+            #About h3{
+                color: white;
+                text-align: center;
+                font-size: 40px;
+                margin: 100px 0px 50px 0px;
+            }
+            #About img{
+                float: left;
+                width: 50%;
+            }
+            #About #About_text{
+                color : white;
+                margin : 40px 100px 100px 100px;
+                width: 500px;
+                float: left;
+            }
+            @import url('https://fonts.googleapis.com/css?family=Stylish&display=swap');
+            #About_text h4{
+                font-size : 25px;
+                font-family: 'Stylish', sans-serif;
+            }
+            #Episodes h3{
+                color: white;
+                text-align: center;
+                font-size: 40px;
+                margin: 150px 100px;
+            }
+
+            footer{
+                color: white;
+                
+                padding: 10px 50px; /*상하px 좌우px*/
+            }
+            footer>div>ul>li{
+                float:left;
+                list-style:none;
+                padding:0px 10px; /*상화 좌우*/
+                border-right : solid 2px gray
+            }
+            footer>div>ul>li:nth-child(6){
+                border:none;
+            }
+            footer>div>ul{
+                padding:0px;
+            }
+            footer>ul>li{
+                float: left;
+                list-style:none;
+                padding :0px 10px; /*상하px 좌우px*/
+            }
+            footer>ul{
+                padding: 0px;
+            }
+            #footer_left{
+                float: left;
+            }
+            #footer_right{
+                float: right;
+            }
+            #list{
+                padding: 0px; 
+                margin: 0px 10px;
+            }
+            section dt{
+                color: white;
+            }
+            section dd{
+                margin: 0px; /* 한쪽으로 쏠리게 만드는 원인을 해결 */
+                color: white;
+            }
+            #list>li{
+                float : left;
+                width : 250px; /* 고정값 */
+
+                list-style: none;
+                padding: 30px;
+            }
+            #list img{
+                width: 250px
+            }
+            #Trailer h3{
+                color: white;
+                text-align: center;
+                font-size: 40px;
+                margin: 150px 100px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <header class="header">
+                    <h1 class="nv_left">
+                        <a href="index.html"><img src="images/logo.png"/></a>
+                    </h1>
+                    <nav class="nv_right">
+                        <ul>
+                            <li><a href="index.html"><img src="images/Home.png"/></a></li>
+                            <li><a href="#About"><img src="images/About.png"/></a></li>
+                            <li><a href="#Episodes"><img src="images/Episodes.png"/></a></li>
+                            <li><a href="#Trailer"><img src="images/Trailer.png"/></a></li>
+                            <div class="clear"></div><!-- float left 해제  -->
+                        </ul>
+                    </nav>  
+                    <div class="clear"></div>
+                </header>
+            <div id="visual">
+                    <div id="up"><img src="images/Netflix_Logo_svg.svg"></div>
+                    <h2>종이의 집 </h2>
+                    <h3> LA CASA DE PAPEL </h3>
+                    <div id="bottom">넷플릭스에서 밀어주고 있는 시리즈 중 하나. <br/>
+                        넷플릭스가 서비스되는 유럽 곳곳에 있는 광고판마다 드라마에 나오는 달리 가면이 보인다. <br/>
+                    </div>
+            </div>
+
+            <section>
+                <div id="About">
+                    <h3>ABOUT</h3>
+                    <img src="images/sc1.jpg"/>
+                    <div id="About_text">  
+                        <h4>"잃을게 없는 사람들 <br/> 사업상 제안을 하나 할게 일종의 강도야. <br/><br/> 액수는 24억유로"</h4>
+                        <p> 사상 최대의 무장강도를 치밀하게 계획해온 <교수>는 잃을 것 없는 8명의 범죄자를 모아 6개월간 트레이닝을 거친 후 스페인 조폐국에 투입한다. 
+                        인질까지 잡아 둔 그들이 노린건 단순한 은행 강도가 아닌 추적이 불가능한 지폐를 대량으로 찍어 낸 후 탈출하는 것..<br/> 
+                        이 모든 걸 <교수>의 시나리오에 의해 움직이게 되고, 마치 교수는 미래를 다녀온 사람처럼 경찰들의 동선과 움직임을 미리 예측해 경찰을 당황하게 만들며 탈출을 계획한다. 
+                        </p>
+                    </div>
+                    <div class="clear"></div><!-- float left 해제  -->
+                </div>
+            </section>
+
+            <section>
+                <div id="Episodes">
+                    <h3>Episodes</h3>
+                        <ul id="list">      
+                            <li>
+                                <img src="images/episode1.jpeg" />
+                                <dl>
+                                    <dt>1화</dt>
+                                    <dd>
+                                        사상 최대의 무장강도를 치밀하게 계획해 온 '교수', 
+                                        잃을 것 없는 8인을 지휘하여 스페인 조폐국에 침투시킨다.
+                                        인질까지 잡았으니 이젠 독 안에 든 쥐가 될 차례
+                                    </dd>
+                                </dl>
+                            </li>
+                            <li>
+                                    <img src="images/episode10.jpg" />
+                                    <dl>
+                                        <dt>2화</dt>
+                                        <dd>
+                                            인질 석방에 투입된 것은 협상가 라켈 무리요
+                                            뿐만이 아니다. 정보부가 얼쩡거리는 이유는? 석방 협상이 
+                                            긴박해지고, 싸움은 시작되었다.
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <img src="images/episode11.jpg" />
+                                    <dl>
+                                        <dt>3화</dt>
+                                        <dd>
+                                            일부 멤버의 이미지가 유출되고 아르투로는 필사적으로 살길을 모색한다.
+                                            바에서 만난 남자를 의심하는 라켈. 순조롭게 계획이 틀어진 것은 삶이 
+                                            늘 그렇듯 사랑 탓이었다.
+                                        </dd>
+                                    </dl>
+                                </li>
+                            <li>
+                                <img src="images/episode3.jpg" />
+                                <dl>
+                                    <dt>4화</dt>
+                                    <dd>
+                                        라켈에게 개인적인 긴급상황이 발생한다. 총성을 들은 인질들은 겁에 질리고, 
+                                        모스크바는 베를린의 명령을 이행한 사람이 아들임을 알게 된다. 
+                                        열린 문은 투항의 신호인가?
+                                    </dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <img src="images/episode4.jpg" />
+                                <dl>
+                                    <dt>5화</dt>
+                                    <dd>
+                                        의료진 진입이 허용된 틈을 타 경찰이 잠입한다. 지금껏 모든 걸 내다본 교수와 그보다 한 수 앞을 내다봐야 
+                                        하는 라켈. 트로이의 목마는 누구의 차지가 될 것인가.
+                                    </dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <img src="images/episode5.jpg" />
+                                <dl>
+                                    <dt>6화</dt>
+                                    <dd>
+                                        상태가 나빠지는 모니카. 리우는 뉴스 보도에 심기가 불편해지고, 
+                                        교수는 계책이 통한 걸 즐긴다. 
+                                        베를린이 규칙을 어기자, 도쿄는 교수에게 보고하라고 종용한다.
+                                    </dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <img src="images/episode6.jpg" />
+                                <dl>
+                                    <dt>7화</dt>
+                                    <dd>
+                                        경찰이 단서를 잡고 한 멤버의 실수까지 더해져 정체가 드러나기 일보 직전. 
+                                        좁혀지는 수사망의 한가운데 선 교수는 위기를 모면하려면 촌각을 다투며 기지를 발휘해야 한다.
+                                    </dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <img src="images/episode7.jpg" />
+                                <dl>
+                                    <dt>8화</dt>
+                                    <dd>
+                                        리우와 대화하는 앨리슨을 보고 다그치는 도쿄. 
+                                        라켈은 언론의 호된 질타를 받고 벼랑 끝으로 몰린다. 
+                                        놈들이 늘 미꾸라지처럼 빠져나가다니, 누군가 정보를 흘리는 걸까?
+                                    </dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <img src="images/episode2.jpg" />
+                                <dl>
+                                    <dt>9화</dt>
+                                    <dd>
+                                        목격자의 진술을 막으려 전력질주하는 교수. 
+                                        실명이 밝혀지고 중상모략 당한 베를린은 복수의 칼을 간다.
+                                    </dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <img src="images/episode9.jpg" />
+                                <dl>
+                                    <dt>10화</dt>
+                                    <dd>
+                                        라켈은 인질들이 무사한지 확인하려 건물 안으로 진입한다. 한편, 나이로비는 앨리슨에게 조언을 해준다.
+                                    </dd>
+                                </dl>
+                            </li>
+                            <div class="clear"></div>
+                        </ul>
+                </div>
+               
+            </section>
+
+            <section>
+                <div id="Trailer">
+                    <h3>Trailer</h3>
+                    <video width="800px" controls>
+                        <source src="./images/main2.mp4" type="video/mp4"/>
+                    </video>
+                    <video width="800px" controls>
+                        <source src="./images/main3.mp4" type="video/mp4"/>
+                    </video>
+                         
+
+            </section>
+            <footer>
+                <div id="footer_left">
+                    <ul>
+                        <li>Home</li>
+                        <li>About</li>
+                        <li>Services</li>
+                        <li>Work</li>
+                        <li>Blog</li>
+                        <li>Contact us</li>
+                        <div class="clear"></div>
+                    </ul>
+                    <div>ⓒ 2020 JUNG JI EUN. All Right Reserved.</div>
+                    <!-- 의미 없이 나눌 땐 div 사용-->
+                    <div>
+                        the loges in the design are the property of 
+                        their respective owners/copyright holders.
+                    </div>
+                    <br>
+                </div>
+            </footer>
+        </div>
+
+    </body>
+</html>

@@ -8,6 +8,32 @@
         body{
             margin : 0px; 
         }
+        .header{
+            color:white;
+            padding: 10px 10px; 
+        }
+
+        .header>h1 img{
+                margin: 0px;
+                padding: 0px; 
+                height: 80px;
+        }
+
+        .header>nav li{
+            float: left;
+            list-style: none;
+            padding: 0px 10px /* 상하px 좌우px */
+        }
+
+        .header ul img{
+            margin:10px 10px; /* 상하px 좌우px */
+            height: 30px;
+        }
+
+        .nv_left{
+            float: left;
+        }
+       
         header{
             background-color : black;
             color:white;
@@ -127,10 +153,67 @@
             margin-left: auto; /* 가변값 */
             margin-right: auto; /* 가변값 */
         }
+        .footer{
+            background-color: black;
+            color: #ccb;
+            
+            padding: 10px 50px; /*상하px 좌우px*/
+        }
+        footer>div>ul>li{
+            float:left;
+            list-style:none;
+            padding:0px 10px; /*상화 좌우*/
+            border-right : solid 2px gray
+        }
+        footer>div>ul>li:nth-child(6){
+            border:none;
+        }
+        footer>div>ul{
+            padding:0px;
+        }
+        footer>ul>li{
+            float: left;
+            list-style:none;
+            padding :0px 10px; /*상하px 좌우px*/
+        }
+        footer>ul{
+            padding: 0px;
+        }
+        footer #footer_left{
+            float: left;
+        }
+        footer #footer_right{
+            float: right;
+        }
+        #wrap{
+            /* width: 1200px; */ /* 고정값 */
+            min-width: 1100px; /* 최소넓이 */
+            max-width: 1920px; /* 최대넓이 */
+            margin-left: auto; /* 가변값 */
+            margin-right: auto; /* 가변값 */
+        }
+        body{
+            margin: 0px;
+        }
         </style>
     </head>
     <body>
         <div id="wrap">
+            <header class="header">
+                <h1 class="nv_left">
+                    <a href="index.html"><img src="images/logo.png"/></a>
+                </h1>
+                <nav class="nv_right">
+                    <ul>
+                        <li><a href="index.html"><img src="images/Home.png"/></a></li>
+                        <li><a href="layout1.html"><img src="images/layout1.png"/></a></li>
+                        <li><a href="layout3.html"><img src="images/layout3.png"/></a></li>
+                        <li><a href="fin_test.html"><img src="images/LA_CASA_DE_PAPEL.png"/></a></li>
+                        <div class="clear"></div><!-- float left 해제  -->
+                    </ul>
+                </nav>  
+                <div class="clear"></div>
+            </header>
             <header>
                 <h1 class="float_left">
                     <!-- 의미는 없지만 용도 때문에 사용할 땐 div와 span을 사용함 -->
@@ -231,6 +314,26 @@
                 </ul>
             </section>
         </div>
+        <footer class="footer">
+            <div id="footer_left">
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Services</li>
+                    <li>Work</li>
+                    <li>Blog</li>
+                    <li>Contact us</li>
+                    <div class="clear"></div>
+                </ul>
+                <div>ⓒ 2020 JUNGJIEUN. All Right Reserved.</div>
+                    <div>
+                        the loges in the design are the property of 
+                        their respective owners/copyright holders.
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <br>
+        </footer>
 
     </body>
 </html>
