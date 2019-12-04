@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>layout3</title>
-        <meta charset="UTF-8">
+        <meta charset="UTF-8"/>
         <style>
             /* CSS 작성하는 곳 */
             body{
@@ -112,10 +112,11 @@
             .info dt{
                 font-weight: bold;
             }
-            footer{
-                color: white;
-                
-                padding: 10px 50px; /*상하px 좌우px*/
+            .footer{
+            background-color: black;
+            color: #ccb;
+            
+            padding: 10px 50px; /*상하px 좌우px*/
             }
             footer>div>ul>li{
                 float:left;
@@ -137,13 +138,13 @@
             footer>ul{
                 padding: 0px;
             }
-            #footer_left{
-                background-color:black;
+            footer #footer_left{
                 float: left;
             }
-            .ft{
-                background-color:black;
+            footer #footer_right{
+                float: right;
             }
+   
         </style>
     </head>
     <body>
@@ -155,9 +156,9 @@
                 <nav class="nv_right">
                     <ul>
                         <li><a href="index.html"><img src="images/Home.png"/></a></li>
-                        <li><a href="layout1"><img src="images/layout1.png"/></a></li>
-                        <li><a href="layout2"><img src="images/layout2.png"/></a></li>
-                        <li><a href="fin_test.html"><img src="images/LA_CASA_DE_PAPEL.png"/></a></li>
+                        <li><a href="layout1.html"><img src="images/layout1.png"/></a></li>
+                        <li><a href="layout2.html"><img src="images/layout2.png"/></a></li>
+                        <li><a href="free_layout.html"><img src="images/LA_CASA_DE_PAPEL.png"/></a></li>
                         <div class="clear"></div><!-- float left 해제  -->
                     </ul>
                 </nav>  
@@ -428,34 +429,34 @@
             </div>
            <footer>
                <div class="short_line"></div> <!--의미가 없는 태그 = div 사용-->
-               <img src="images/layout3_icon1.png">
-               <img src="images/layout3_icon2.png">
-               <img src="images/layout3_icon3.png">
-               <img src="images/layout3_icon4.png">
+               <img src="images/layout3_icon1.png"/>
+               <img src="images/layout3_icon2.png"/>
+               <img src="images/layout3_icon3.png"/>
+               <img src="images/layout3_icon4.png"/>
                <div class="short_line"></div> <!--의미가 없는 태그 = div 사용-->
                <div>This website & the Internet Ends hereg</div>
                <div>Copyright 2011 Showcase Design www.BlazRobar.com</div>
            </footer>
-           <footer class="ft">
-                <div id="footer_left">
-                    <ul>
-                        <li>Home</li>
-                        <li>About</li>
-                        <li>Services</li>
-                        <li>Work</li>
-                        <li>Blog</li>
-                        <li>Contact us</li>
-                        <div class="clear"></div>
-                    </ul>
-                    <div>ⓒ 2020 JUNG JI EUN. All Right Reserved.</div>
-                    <!-- 의미 없이 나눌 땐 div 사용-->
+           <footer class="footer">
+            <div id="footer_left">
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Services</li>
+                    <li>Work</li>
+                    <li>Blog</li>
+                    <li>Contact us</li>
+                    <div class="clear"></div>
+                </ul>
+                <div>ⓒ 2020 JUNGJIEUN. All Right Reserved.</div>
                     <div>
                         the loges in the design are the property of 
                         their respective owners/copyright holders.
                     </div>
-                    <br>
                 </div>
-            </footer>
+                <div class="clear"></div>
+                <br/>
+        </footer>
         </div>
         
     </body>
